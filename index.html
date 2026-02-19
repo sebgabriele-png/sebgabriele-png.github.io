@@ -2,112 +2,170 @@
 <html lang="en-GB">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Seb Gabriele Coaching | Evidence-Based Hypertrophy & Fat Loss</title>
-  <meta name="description" content="Evidence-based hypertrophy and fat loss coaching. Custom training, calorie and macro guidance, check-ins, and coaching calls. Book a consultation." />
+  <meta name="description" content="Evidence-based hypertrophy and fat loss coaching. Custom training, calorie & macro guidance, biweekly calls, weekly check-ins, and form checks." />
+
   <style>
     :root{
       --bg:#0b0f14;
       --panel:#0f1722;
-      --muted:#9fb0c3;
+      --panel2:#0c131d;
       --text:#e8eef6;
-      --accent:#7dd3fc;
+      --muted:#9fb0c3;
       --line:rgba(255,255,255,.10);
+      --accent:#8beef6;
+      --accent2:rgba(139,238,246,.18);
       --btn:#111c2a;
       --btnHover:#15263a;
       --ok:#86efac;
+      --warn:#fbbf24;
     }
     *{box-sizing:border-box}
     body{
       margin:0;
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       background:
-        radial-gradient(1200px 600px at 20% -10%, rgba(125,211,252,.12), transparent 60%),
-        radial-gradient(900px 500px at 90% 0%, rgba(134,239,172,.10), transparent 55%),
+        radial-gradient(1200px 700px at 20% -10%, rgba(125,211,252,.14), transparent 60%),
+        radial-gradient(900px 600px at 90% 0%, rgba(134,239,172,.10), transparent 55%),
+        radial-gradient(900px 700px at 50% 120%, rgba(139,238,246,.10), transparent 55%),
         var(--bg);
       color:var(--text);
       line-height:1.55;
     }
-    a{color:var(--accent);text-decoration:none}
-    a:hover{text-decoration:underline}
-    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 56px}
-    .nav{
-      display:flex;align-items:center;justify-content:space-between;
-      gap:14px;padding:14px 16px;border:1px solid var(--line);
-      background:rgba(15,23,34,.70);backdrop-filter: blur(8px);
-      border-radius:16px;
+    a{color:inherit}
+    .wrap{max-width:1100px;margin:0 auto;padding:26px 18px 60px}
+    .topbar{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      padding:14px 16px;border:1px solid var(--line);border-radius:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      backdrop-filter: blur(10px);
     }
     .brand{display:flex;flex-direction:column;gap:2px}
-    .brand .name{font-weight:700;letter-spacing:.2px}
-    .brand .tag{font-size:13px;color:var(--muted)}
-    .pillrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+    .brand h3{margin:0;font-size:16px;letter-spacing:.2px}
+    .brand span{color:var(--muted);font-size:13px}
+    .nav{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
     .pill{
+      text-decoration:none;
       display:inline-flex;align-items:center;gap:8px;
-      border:1px solid var(--line);
-      padding:8px 12px;border-radius:999px;
-      background:rgba(255,255,255,.03);
-      font-size:14px;color:var(--text);
-    }
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:10px 14px;border-radius:12px;
-      background:var(--btn);
-      border:1px solid var(--line);
+      padding:8px 12px;border-radius:999px;border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
       color:var(--text);
+    }
+    .pill:hover{background:rgba(255,255,255,.08)}
+    .pill.primary{
+      background:var(--btn);
+      border-color:rgba(139,238,246,.35);
+      box-shadow: 0 0 0 3px rgba(139,238,246,.06);
       font-weight:600;
     }
-    .btn:hover{background:var(--btnHover);text-decoration:none}
+    .pill.primary:hover{background:var(--btnHover)}
     .hero{
-      margin-top:22px;
+      margin-top:18px;
       border:1px solid var(--line);
       border-radius:18px;
-      background:rgba(15,23,34,.55);
-      padding:22px 18px;
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
+      padding:26px 22px;
     }
-    .hero h1{margin:0 0 8px;font-size:28px}
-    .hero p{margin:0;color:var(--muted);max-width:70ch}
-    .grid{
-      display:grid;grid-template-columns:1fr;gap:14px;
-      margin-top:14px;
-    }
-    @media (min-width:820px){
-      .grid{grid-template-columns:1.2fr .8fr}
-    }
+    .hero h1{margin:0 0 10px 0;font-size:34px;line-height:1.15}
+    .hero p{margin:0 0 14px 0;color:var(--muted);max-width:900px}
+    .contact{margin-top:8px;color:var(--muted);font-size:14px}
+    .contact a{color:var(--accent);text-decoration:none}
+    .contact a:hover{text-decoration:underline}
+
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:14px}
+    @media (max-width:900px){.grid{grid-template-columns:1fr}}
+
     .card{
       border:1px solid var(--line);
-      border-radius:18px;
-      background:rgba(15,23,34,.55);
-      padding:18px;
+      border-radius:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      padding:18px 18px;
     }
-    .card h2{margin:0 0 10px;font-size:18px}
+    .card h2{margin:0 0 10px 0;font-size:18px}
     .card ul{margin:0;padding-left:18px;color:var(--muted)}
     .card li{margin:8px 0}
-    .footer{
-      margin-top:18px;
+
+    .pricingWrap{margin-top:14px}
+    .pricingGrid{display:grid;grid-template-columns:repeat(3, 1fr);gap:14px}
+    @media (max-width:980px){.pricingGrid{grid-template-columns:1fr}}
+    .priceCard{
+      position:relative;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      padding:18px;
+      overflow:hidden;
+    }
+    .badge{
+      position:absolute;top:14px;right:14px;
+      font-size:12px;
+      padding:6px 10px;border-radius:999px;
+      background:rgba(139,238,246,.12);
+      border:1px solid rgba(139,238,246,.25);
+      color:var(--text);
+    }
+    .planTitle{margin:0 0 6px 0;font-size:18px}
+    .planDesc{margin:0 0 12px 0;color:var(--muted);font-size:14px}
+    .priceRow{display:flex;align-items:baseline;gap:8px;margin:10px 0 14px}
+    .price{font-size:34px;font-weight:750;letter-spacing:-.4px}
+    .per{color:var(--muted)}
+    .includes{margin:0;padding-left:18px;color:var(--muted)}
+    .includes li{margin:8px 0}
+    .ctaRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .btn{
+      text-decoration:none;
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 12px;border-radius:12px;
+      border:1px solid rgba(139,238,246,.35);
+      background:var(--btn);
+      color:var(--text);
+      font-weight:650;
+      width:100%;
+    }
+    .btn:hover{background:var(--btnHover)}
+    .btn.secondary{
+      border-color:var(--line);
+      background:rgba(255,255,255,.05);
+      font-weight:600;
+    }
+
+    .note{
+      margin-top:12px;
       color:var(--muted);
       font-size:13px;
-      border-top:1px solid var(--line);
-      padding-top:14px;
-      display:flex;flex-wrap:wrap;gap:12px;justify-content:space-between;
     }
-    .small{font-size:13px;color:var(--muted)}
-    .legalrow{display:flex;gap:12px;flex-wrap:wrap}
+    .divider{height:1px;background:var(--line);margin:18px 0 12px}
+
+    footer{
+      margin-top:18px;
+      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      color:var(--muted);
+      font-size:13px;
+      padding:14px 6px 0;
+    }
+    footer a{color:var(--muted);text-decoration:none}
+    footer a:hover{text-decoration:underline}
+    .footerLinks{display:flex;gap:12px;flex-wrap:wrap}
   </style>
 </head>
+
 <body>
   <div class="wrap">
-    <div class="nav">
+
+    <header class="topbar">
       <div class="brand">
-        <div class="name">Seb Gabriele Coaching</div>
-        <div class="tag">Evidence-Based Hypertrophy & Fat Loss Coaching (UK)</div>
+        <h3>Seb Gabriele Coaching</h3>
+        <span>Evidence-Based Hypertrophy & Fat Loss Coaching (UK)</span>
       </div>
-      <div class="pillrow">
+
+      <nav class="nav">
         <a class="pill" href="terms.html">Terms</a>
         <a class="pill" href="privacy.html">Privacy</a>
         <a class="pill" href="refund.html">Refunds</a>
-        <a class="btn" href="https://calendly.com/sebgabriele10/30-minute-call" target="_blank" rel="noopener">Book a call</a>
-      </div>
-    </div>
+        <a class="pill primary" href="https://calendly.com/sebgabriele10/30-minute-call" target="_blank" rel="noopener">Book a call</a>
+      </nav>
+    </header>
 
     <section class="hero">
       <h1>Coaching built on evidence, consistency, and results.</h1>
@@ -115,9 +173,9 @@
         Personalised training and nutrition support to help you build muscle, lose fat, and stay consistent.
         Book a consultation and we’ll map out a plan that fits your lifestyle.
       </p>
-      <p class="small" style="margin-top:10px;">
+      <div class="contact">
         Contact: <a href="mailto:sebgabriele10@gmail.com">sebgabriele10@gmail.com</a>
-      </p>
+      </div>
     </section>
 
     <section class="grid">
@@ -130,6 +188,7 @@
           <li>Accountability, habit building, and realistic expectations</li>
         </ul>
       </div>
+
       <div class="card">
         <h2>How it works</h2>
         <ul>
@@ -137,26 +196,92 @@
           <li>Step 2: If it’s a fit, choose the plan and complete payment</li>
           <li>Step 3: Start your programme and begin check-ins</li>
         </ul>
-        <p class="small" style="margin-top:12px;">
+        <div class="note">
           Payments are processed securely by Stripe. We do not store full card details.
-        </p>
+        </div>
       </div>
     </section>
 
-    <footer class="footer">
-      <div>© <span id="y"></span> Seb Gabriele Coaching. UK.</div>
-      <div class="legalrow">
+    <section class="pricingWrap">
+      <div class="divider"></div>
+
+      <div class="pricingGrid">
+        <div class="priceCard">
+          <h3 class="planTitle">Starter</h3>
+          <p class="planDesc">Ideal if you want a clear plan and accountability without a full coaching setup.</p>
+          <div class="priceRow">
+            <div class="price">£129</div>
+            <div class="per">per month</div>
+          </div>
+          <ul class="includes">
+            <li>Training programme</li>
+            <li>Weekly check-in</li>
+            <li>Basic nutrition guidance</li>
+            <li>Form check support</li>
+          </ul>
+          <div class="ctaRow">
+            <a class="btn" href="https://calendly.com/sebgabriele10/30-minute-call" target="_blank" rel="noopener">Book a call</a>
+            <a class="btn secondary" href="#" title="Add your Stripe payment link here later">Payment link (after call)</a>
+          </div>
+        </div>
+
+        <div class="priceCard">
+          <div class="badge">Most popular</div>
+          <h3 class="planTitle">Monthly Coaching</h3>
+          <p class="planDesc">Full coaching support with tailored training and nutrition adjustments.</p>
+          <div class="priceRow">
+            <div class="price">£199</div>
+            <div class="per">per month</div>
+          </div>
+          <ul class="includes">
+            <li>Personalised training plan updates</li>
+            <li>Calories and macros set + adjustments</li>
+            <li>Weekly check-ins</li>
+            <li>Form checks and feedback</li>
+            <li>Messaging support</li>
+          </ul>
+          <div class="ctaRow">
+            <a class="btn" href="https://calendly.com/sebgabriele10/30-minute-call" target="_blank" rel="noopener">Book a call</a>
+            <a class="btn secondary" href="#" title="Add your Stripe payment link here later">Payment link (after call)</a>
+          </div>
+        </div>
+
+        <div class="priceCard">
+          <h3 class="planTitle">Premium</h3>
+          <p class="planDesc">More contact and support for faster iteration and tighter accountability.</p>
+          <div class="priceRow">
+            <div class="price">£299</div>
+            <div class="per">per month</div>
+          </div>
+          <ul class="includes">
+            <li>Everything in Monthly Coaching</li>
+            <li>Biweekly coaching calls</li>
+            <li>More frequent programme adjustments</li>
+            <li>Priority feedback and messaging</li>
+          </ul>
+          <div class="ctaRow">
+            <a class="btn" href="https://calendly.com/sebgabriele10/30-minute-call" target="_blank" rel="noopener">Book a call</a>
+            <a class="btn secondary" href="#" title="Add your Stripe payment link here later">Payment link (after call)</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="note">
+        Prices shown are for guidance. Final plan and start date are confirmed after the consultation call.
+      </div>
+    </section>
+
+    <footer>
+      <div>© 2026 Seb Gabriele Coaching. UK.</div>
+      <div class="footerLinks">
         <span>Effective date: 19 February 2026</span>
-        <span>•</span>
+        <span>·</span>
         <a href="terms.html">Terms</a>
         <a href="privacy.html">Privacy</a>
         <a href="refund.html">Refund Policy</a>
       </div>
     </footer>
-  </div>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+  </div>
 </body>
 </html>
